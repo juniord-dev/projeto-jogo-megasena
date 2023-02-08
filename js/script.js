@@ -32,8 +32,6 @@ function createBoard() {
 function newGame() {
   resetGame();
   render();
-
-  console.log(state.currentGame);
 }
 
 function render() {
@@ -72,7 +70,6 @@ function handleNumberClick(event) {
   } else {
     addNumberToGame(value);
   }
-  console.log(state.currentGame);
   render();
 }
 
@@ -126,10 +123,10 @@ function renderSavedGames() {
 
       var liGame = document.createElement('li');
       liGame.textContent = currentGame.join(', ');
-      liGame.classList.add('saved-games')
+      liGame.classList.add('saved-games');
       ulSavedGames.appendChild(liGame);
     }
-    
+
     divSavedGames.appendChild(ulSavedGames);
   }
 }
@@ -187,7 +184,6 @@ function saveGame() {
   }
   state.savedGame.push(state.currentGame);
   newGame();
-  console.log(state.savedGame);
 }
 
 function resetGame() {
@@ -201,7 +197,6 @@ function randomGame() {
     var randomNumber = Math.ceil(Math.random() * 60);
     addNumberToGame(randomNumber);
   }
-  console.log(state.currentGame);
   render();
 }
 
